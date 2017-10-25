@@ -1,6 +1,9 @@
 package transport;
 
 public class Vehicle {
+    /**
+     * Metodos utilizados
+     */
 
     private double load;
     private double maxLoad;
@@ -17,15 +20,28 @@ public class Vehicle {
         return maxLoad;
     }
 
+    /**
+     * Aqui declaramos las cargas del camion
+     */
+
     public boolean addBox(double weight) {
-        if (weight <= maxLoad) {
+
+        if (this.load + weight < maxLoad) {
+            this.load = weight + this.load;
+            System.out.println("Cargamos al caminon " +weight + " KG");
             return true;
         } else {
+            System.out.println("Carga no introducida " +weight + " KG");
             return false;
         }
-
     }
 }
+
+
+/**
+ * David Rojas Julia
+ * 2º ASIX
+ */
 
 
 
